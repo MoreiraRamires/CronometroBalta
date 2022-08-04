@@ -32,12 +32,23 @@ Console.Clear();
     }
 }
 
+static void PreStart( ){
+    Console.Clear();
+    Console.WriteLine("Ready...");
+    Thread.Sleep(500);
+    Console.Clear();
+    Console.WriteLine("Go");
+    Thread.Sleep(500);
+    Console.Clear();
+
+}
 static void Start(int seconds){
+
     
     Console.WriteLine("Qual tempo?");
     float time = float.Parse(Console.ReadLine());
     
-
+    PreStart();
     for( float i= 0; i <= (time*seconds); i++ ){
         Console.Clear();
         Console.WriteLine(i);
