@@ -6,11 +6,23 @@ static void Menu(){
 Console.Clear();
     Console.WriteLine("S = segundos");
     Console.WriteLine("M = minutos");
+    Console.WriteLine("0 = Sair");
+
     string respostaUser = Console.ReadLine().ToUpper();
 
     switch(respostaUser){
         case "S": Start(1);break;
         case "M": Start(60);break;
+        case "0": 
+            Console.Clear();
+            Console.WriteLine("Obrigado por usar nosso sistema");
+            Thread.Sleep(2000);
+            Console.Clear();
+            System.Environment.Exit(0) 
+        
+        ;break;
+
+
         default: 
             Console.WriteLine("Error, tente novamente");
             Thread.Sleep(2000);
@@ -32,11 +44,11 @@ static void Start(int seconds){
         Thread.Sleep(1000);
     };
 
-        Console.Clear();
-        Console.WriteLine("Contagem finalizada.");
-        Thread.Sleep(3000);
-        Console.Clear();
-        Menu();
+    Console.Clear();
+    Console.WriteLine("Contagem finalizada.");
+    Thread.Sleep(3000);
+    Console.Clear();
+    Menu();
 
 
 }
